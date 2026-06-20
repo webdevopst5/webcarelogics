@@ -33,7 +33,7 @@ class SiteHeader extends HTMLElement {
             <div class="container-1400 flex items-center justify-between">
                 <!-- Logo -->
                 <a href="index.html" class="flex items-center group">
-                    <img src="img/logo.png" alt="Webcarelogics" class="h-10 md:h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105">
+                    <img src="/img/logo.png" alt="Webcarelogics" class="h-10 md:h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105">
                 </a>
 
                 <!-- Desktop Nav -->
