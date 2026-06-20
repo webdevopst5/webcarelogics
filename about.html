@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webcarelogics | About Us</title>
+    <meta name="description"
+        content="Professional software and web development company offering custom ERP software, dynamic website design, and SEO services.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS (CDN for Static Setup) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#fdfbea',
+                            100: '#faf4c9',
+                            200: '#f6e995',
+                            300: '#f2db59',
+                            400: '#efce2c',
+                            500: '#eec425',
+                            600: '#d6a716',
+                            700: '#b37e11',
+                            800: '#936214',
+                            900: '#7a5015',
+                            950: '#462a08',
+                        },
+                        dark: {
+                            900: '#031a1f',
+                            800: '#052c34',
+                            700: '#08414d',
+                        }
+                    },
+                    maxWidth: {
+                        'container': '1400px',
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'blob': 'blob 7s infinite',
+                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        blob: {
+                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                            '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+                            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+                            '100%': { transform: 'translate(0px, 0px) scale(1)' },
+                        },
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS for micro-animations and utilities not easily done in Tailwind -->
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .glass {
+                @apply bg-white/10 backdrop-blur-md border border-white/20 shadow-[0_8px_32px_0_rgba(31,38,135,0.07)];
+            }
+            .glass-dark {
+                @apply bg-dark-900/60 backdrop-blur-xl border border-white/10;
+            }
+            .text-gradient {
+                @apply bg-clip-text text-transparent bg-gradient-to-r from-brand-400 to-red-500;
+            }
+            .container-1400 {
+                @apply max-w-container mx-auto px-4 sm:px-6 lg:px-8;
+            }
+        }
+    </style>
+
+    <!-- Alpine.js -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <!-- Custom Components -->
+    <script defer src="components.js"></script>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="img/favicon.png">
+</head>
+
+<body
+    class="bg-dark-900 text-slate-300 antialiased selection:bg-brand-500 selection:text-white overflow-x-hidden relative">
+
+    <!-- Background Gradient Blobs -->
+    <div class="fixed inset-0 overflow-hidden pointer-events-none z-0">
+        <div
+            class="absolute top-0 -left-4 w-72 h-72 bg-brand-500 rounded-full mix-blend-multiply filter blur-[128px] opacity-20 animate-blob">
+        </div>
+        <div
+            class="absolute top-0 -right-4 w-72 h-72 bg-red-500 rounded-full mix-blend-multiply filter blur-[128px] opacity-20 animate-blob animation-delay-2000">
+        </div>
+        <div
+            class="absolute -bottom-8 left-20 w-72 h-72 bg-orange-500 rounded-full mix-blend-multiply filter blur-[128px] opacity-20 animate-blob animation-delay-4000">
+        </div>
+    </div>
+
+    <div class="relative z-10 flex flex-col min-h-screen">
+        <!-- Header -->
+        <site-header></site-header>
+
+        <!-- Main Content -->
+        <main class="flex-grow pt-24 md:pt-32">
+            <!-- Page Header -->
+            <section class="py-12 md:py-20 relative">
+                <div class="container-1400 text-center relative z-10">
+                    <h1 class="font-display text-5xl md:text-6xl font-bold text-white mb-6">About <span
+                            class="text-brand-400">Us</span></h1>
+                    <p class="text-xl text-slate-400 max-w-2xl mx-auto">Discover who we are, our mission, and the
+                        passion that drives us to deliver premium digital solutions.</p>
+                </div>
+            </section>
+
+            <!-- About Content -->
+            <section class="py-16 md:py-24 relative bg-slate-50">
+                <div class="container-1400">
+                    <!-- Section Header -->
+                    <div class="text-center max-w-4xl mx-auto mb-16 md:mb-20">
+                        <div class="text-brand-500 font-bold tracking-wider uppercase text-sm mb-3">Our Story</div>
+                        <h2 class="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-dark-900 mb-6">We Build
+                            Digital <span class="text-gradient">Experiences</span></h2>
+                        <p class="text-lg md:text-xl text-slate-600 leading-relaxed">
+                            Webcarelogics is a Jaipur based(Head Office) Indian Web Designing Company situated at
+                            JHUNJHUNU, Rajasthan. Founded with a mission to give services to its customers in web
+                            designing, website development, testing, and managing the software, E-Commerce solutions,
+                            total internet marketing to grow their business by search engine friendly website designing,
+                            web hosting and many more.
+                        </p>
+                    </div>
+
+                    <!-- Content Grid -->
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+
+                        <!-- Left Side: Visuals & Stats -->
+                        <div class="lg:col-span-5 space-y-8 lg:sticky lg:top-32">
+                            <div
+                                class="relative rounded-3xl overflow-hidden bg-white border border-slate-200 p-2 shadow-2xl">
+                                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                                    alt="Our Team"
+                                    class="rounded-2xl w-full aspect-square md:aspect-auto md:h-[400px] object-cover">
+                            </div>
+
+                            <div class="grid grid-cols-2 gap-6">
+                                <div
+                                    class="bg-white border border-slate-100 shadow-xl shadow-slate-200/50 p-6 md:p-8 rounded-2xl text-center hover:-translate-y-1 transition-transform duration-300">
+                                    <h3 class="text-4xl md:text-5xl font-display font-bold text-brand-500 mb-2">10<span
+                                            class="text-brand-400">+</span></h3>
+                                    <p class="text-slate-600 font-medium text-sm">Years of Excellence</p>
+                                </div>
+                                <div
+                                    class="bg-white border border-slate-100 shadow-xl shadow-slate-200/50 p-6 md:p-8 rounded-2xl text-center hover:-translate-y-1 transition-transform duration-300">
+                                    <h3 class="text-4xl md:text-5xl font-display font-bold text-brand-500 mb-2">500<span
+                                            class="text-brand-400">+</span></h3>
+                                    <p class="text-slate-600 font-medium text-sm">Projects Delivered</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Right Side: Detailed Content -->
+                        <div
+                            class="lg:col-span-7 bg-white rounded-3xl border border-slate-200 shadow-xl shadow-slate-200/50 p-8 md:p-12">
+                            <div class="space-y-6">
+                                <p class="text-slate-600 text-base md:text-lg leading-relaxed">
+                                    We design Static & Dynamic websites that are search engine friendly and productive
+                                    in nature. Our dynamic websites come with complete administration control panel that
+                                    help you manage your content and website in real time with less effort. We also
+                                    provide one roof solutions to your internet presence requirements.
+                                </p>
+
+                                <p class="text-slate-600 text-base md:text-lg leading-relaxed">
+                                    Today Webcarelogics is actively managed by a team of experienced and dedicated web
+                                    professional. Our team comprehensive web services ranging from custom website design
+                                    to development of complex and global internet system. Webcarelogics providing
+                                    services in Rajasthan, Haryana for many years with trust worthy, committed & well
+                                    experience and we provides 24x7 hour support to our customers.
+                                </p>
+
+                                <div
+                                    class="p-6 md:p-8 bg-brand-50/50 border border-brand-100 rounded-2xl my-8 relative overflow-hidden group">
+                                    <div
+                                        class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 group-hover:scale-110 transition-all duration-500 text-brand-500 text-6xl">
+                                        <i class="fa-solid fa-layer-group"></i>
+                                    </div>
+                                    <h4 class="text-xl font-bold text-dark-900 mb-3 relative z-10">Comprehensive
+                                        Services</h4>
+                                    <p class="text-slate-600 leading-relaxed relative z-10">
+                                        As a professional design firm we offer the following services Web application
+                                        development, Website designing, Corporate profiles and presentations, E-commerce
+                                        solutions, Application development, maintenance, and re-engineering, Mail
+                                        gateways, Web hosting solutions, Search Engine Optimization(SEO), Flash
+                                        development, web directory solutions, portal development, Software Development,
+                                        link exchange services and customer online support solutions.
+                                    </p>
+                                </div>
+
+                                <p class="text-slate-600 text-base md:text-lg leading-relaxed">
+                                    We also provide web consultancy, software solution and web designing, re-designing
+                                    of existing websites. As an web design company we are very cost effective and
+                                    provide timely deliveries of our web design projects.
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+        </main>
+        <!-- Footer -->
+        <site-footer></site-footer>
+    </div>
+</body>
+
+</html>

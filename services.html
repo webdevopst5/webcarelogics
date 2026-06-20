@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webcarelogics | Our Services</title>
+    <meta name="description" content="Professional software and web development company offering custom ERP software, dynamic website design, and SEO services.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS (CDN for Static Setup) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#fff8e6',
+                            100: '#ffefc1',
+                            200: '#ffe08a',
+                            300: '#ffd04d',
+                            400: '#ffc11a',
+                            500: '#ffad05',
+                            600: '#cc8e00',
+                            700: '#996b00',
+                            800: '#664700',
+                            900: '#332400',
+                            950: '#1a1200',
+                        },
+                        dark: {
+                            900: '#031a1f',
+                            800: '#052c34',
+                            700: '#08414d',
+                        }
+                    },
+                    maxWidth: {
+                        'container': '1400px',
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'blob': 'blob 7s infinite',
+                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        blob: {
+                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                            '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+                            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+                            '100%': { transform: 'translate(0px, 0px) scale(1)' },
+                        },
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS for micro-animations and utilities not easily done in Tailwind -->
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .glass {
+                @apply bg-white/10 backdrop-blur-md border border-white/20 shadow-[0_8px_32px_0_rgba(31,38,135,0.07)];
+            }
+            .glass-dark {
+                @apply bg-dark-900/60 backdrop-blur-xl border border-white/10;
+            }
+            .text-gradient {
+                @apply bg-clip-text text-transparent bg-gradient-to-r from-brand-400 to-red-500;
+            }
+            .container-1400 {
+                @apply max-w-container mx-auto px-4 sm:px-6 lg:px-8;
+            }
+        }
+    </style>
+
+    <!-- Alpine.js -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <!-- Custom Components -->
+    <script defer src="components.js"></script>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="img/favicon.png">
+</head>
+<body class="bg-dark-900 text-slate-300 antialiased selection:bg-brand-500 selection:text-white overflow-x-hidden relative">
+    
+    <!-- Background Gradient Blobs -->
+    <div class="fixed inset-0 overflow-hidden pointer-events-none z-0">
+        <div class="absolute top-0 -left-4 w-72 h-72 bg-brand-500 rounded-full mix-blend-multiply filter blur-[128px] opacity-20 animate-blob"></div>
+        <div class="absolute top-0 -right-4 w-72 h-72 bg-red-500 rounded-full mix-blend-multiply filter blur-[128px] opacity-20 animate-blob animation-delay-2000"></div>
+        <div class="absolute -bottom-8 left-20 w-72 h-72 bg-orange-500 rounded-full mix-blend-multiply filter blur-[128px] opacity-20 animate-blob animation-delay-4000"></div>
+    </div>
+
+    <div class="relative z-10 flex flex-col min-h-screen">
+        <!-- Header -->
+        <site-header></site-header>
+
+        <!-- Main Content -->
+        <main class="flex-grow pt-24 md:pt-32">
+            <!-- Page Header -->
+            <section class="py-12 md:py-20 relative">
+                <div class="container-1400 text-center relative z-10">
+                    <h1 class="font-display text-5xl md:text-6xl font-bold text-white mb-6">Our <span class="text-brand-400">Services</span></h1>
+                    <p class="text-xl text-slate-400 max-w-2xl mx-auto">Comprehensive digital solutions designed to accelerate your business growth and streamline operations.</p>
+                </div>
+            </section>
+
+            <!-- Detailed Services Section -->
+            <section class="py-16 md:py-24 relative bg-slate-50 overflow-hidden">
+                <!-- Premium Background Decorations -->
+                <div class="absolute top-0 right-0 w-[800px] h-[800px] bg-brand-500/5 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
+                <div class="absolute bottom-0 left-0 w-[600px] h-[600px] bg-slate-200/50 rounded-full blur-[100px] translate-y-1/3 -translate-x-1/3 pointer-events-none"></div>
+
+                <div class="container-1400 relative z-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+                    <!-- Service 1: Logo Design -->
+                    <div class="bg-white/80 backdrop-blur-xl p-6 lg:p-8 rounded-[2rem] hover:-translate-y-3 hover:scale-[1.02] transition-all duration-500 group border border-white/60 hover:border-brand-300/50 shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:shadow-[0_30px_60px_rgba(239,206,44,0.2)] relative overflow-hidden flex flex-col h-full">
+                        <div class="absolute inset-0 bg-gradient-to-br from-brand-50/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 z-0 pointer-events-none"></div>
+                        <div class="relative z-10 flex-grow flex flex-col">
+                            <div class="w-16 h-16 rounded-[1.25rem] bg-white shadow-sm border border-slate-100 flex items-center justify-center text-brand-500 text-3xl mb-6 group-hover:bg-gradient-to-br group-hover:from-brand-400 group-hover:to-brand-500 group-hover:text-white group-hover:border-transparent group-hover:shadow-brand-500/40 group-hover:scale-110 group-hover:-rotate-6 transition-all duration-500">
+                                <i class="fa-solid fa-pen-nib"></i>
+                            </div>
+                            <h3 class="text-xl font-display font-bold text-dark-900 mb-4 group-hover:text-brand-600 transition-colors duration-300">Logo Design</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed mb-6 flex-grow">Create unique and memorable brand identities that reflect your business values, target audience, and market positioning.</p>
+                            <ul class="space-y-3 w-full border-t border-slate-200/60 group-hover:border-brand-500/30 transition-colors duration-500 pt-6 mt-auto">
+                                <li class="flex items-center gap-3 text-sm font-medium text-slate-700"><div class="w-5 h-5 rounded-full bg-brand-100 text-brand-500 flex items-center justify-center text-[10px] group-hover:bg-brand-500 group-hover:text-white transition-colors duration-300"><i class="fa-solid fa-check"></i></div> Brand Identity Kits</li>
+                                <li class="flex items-center gap-3 text-sm font-medium text-slate-700"><div class="w-5 h-5 rounded-full bg-brand-100 text-brand-500 flex items-center justify-center text-[10px] group-hover:bg-brand-500 group-hover:text-white transition-colors duration-300"><i class="fa-solid fa-check"></i></div> Concept Generation</li>
+                                <li class="flex items-center gap-3 text-sm font-medium text-slate-700"><div class="w-5 h-5 rounded-full bg-brand-100 text-brand-500 flex items-center justify-center text-[10px] group-hover:bg-brand-500 group-hover:text-white transition-colors duration-300"><i class="fa-solid fa-check"></i></div> Vector Graphics</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Service 2: UI/UX Design -->
+                    <div class="bg-white/80 backdrop-blur-xl p-6 lg:p-8 rounded-[2rem] hover:-translate-y-3 hover:scale-[1.02] transition-all duration-500 group border border-white/60 hover:border-brand-300/50 shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:shadow-[0_30px_60px_rgba(239,206,44,0.2)] relative overflow-hidden flex flex-col h-full">
+                        <div class="absolute inset-0 bg-gradient-to-br from-brand-50/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 z-0 pointer-events-none"></div>
+                        <div class="relative z-10 flex-grow flex flex-col">
+                            <div class="w-16 h-16 rounded-[1.25rem] bg-white shadow-sm border border-slate-100 flex items-center justify-center text-brand-500 text-3xl mb-6 group-hover:bg-gradient-to-br group-hover:from-brand-400 group-hover:to-brand-500 group-hover:text-white group-hover:border-transparent group-hover:shadow-brand-500/40 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
+                                <i class="fa-brands fa-figma"></i>
+                            </div>
+                            <h3 class="text-xl font-display font-bold text-dark-900 mb-4 group-hover:text-brand-600 transition-colors duration-300">UI/UX Design</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed mb-6 flex-grow">Design intuitive, engaging, and user-focused digital experiences that improve usability, customer satisfaction, and conversions.</p>
+                            <ul class="space-y-3 w-full border-t border-slate-200/60 group-hover:border-brand-500/30 transition-colors duration-500 pt-6 mt-auto">
+                                <li class="flex items-center gap-3 text-sm font-medium text-slate-700"><div class="w-5 h-5 rounded-full bg-brand-100 text-brand-500 flex items-center justify-center text-[10px] group-hover:bg-brand-500 group-hover:text-white transition-colors duration-300"><i class="fa-solid fa-check"></i></div> Wireframing & Prototyping</li>
+                                <li class="flex items-center gap-3 text-sm font-medium text-slate-700"><div class="w-5 h-5 rounded-full bg-brand-100 text-brand-500 flex items-center justify-center text-[10px] group-hover:bg-brand-500 group-hover:text-white transition-colors duration-300"><i class="fa-solid fa-check"></i></div> User Research & Testing</li>
+                                <li class="flex items-center gap-3 text-sm font-medium text-slate-700"><div class="w-5 h-5 rounded-full bg-brand-100 text-brand-500 flex items-center justify-center text-[10px] group-hover:bg-brand-500 group-hover:text-white transition-colors duration-300"><i class="fa-solid fa-check"></i></div> High-Fidelity Mockups</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Service 3: Print Design -->
+                    <div class="bg-white/80 backdrop-blur-xl p-6 lg:p-8 rounded-[2rem] hover:-translate-y-3 hover:scale-[1.02] transition-all duration-500 group border border-white/60 hover:border-brand-300/50 shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:shadow-[0_30px_60px_rgba(239,206,44,0.2)] relative overflow-hidden flex flex-col h-full">
+                        <div class="absolute inset-0 bg-gradient-to-br from-brand-50/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 z-0 pointer-events-none"></div>
+                        <div class="relative z-10 flex-grow flex flex-col">
+                            <div class="w-16 h-16 rounded-[1.25rem] bg-white shadow-sm border border-slate-100 flex items-center justify-center text-brand-500 text-3xl mb-6 group-hover:bg-gradient-to-br group-hover:from-brand-400 group-hover:to-brand-500 group-hover:text-white group-hover:border-transparent group-hover:shadow-brand-500/40 group-hover:scale-110 group-hover:-rotate-6 transition-all duration-500">
+                                <i class="fa-solid fa-print"></i>
+                            </div>
+                            <h3 class="text-xl font-display font-bold text-dark-900 mb-4 group-hover:text-brand-600 transition-colors duration-300">Print Design</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed mb-6 flex-grow">Professional print materials including business cards, brochures, flyers, banners, catalogs, and marketing collateral.</p>
+                            <ul class="space-y-3 w-full border-t border-slate-200/60 group-hover:border-brand-500/30 transition-colors duration-500 pt-6 mt-auto">
+                                <li class="flex items-center gap-3 text-sm font-medium text-slate-700"><div class="w-5 h-5 rounded-full bg-brand-100 text-brand-500 flex items-center justify-center text-[10px] group-hover:bg-brand-500 group-hover:text-white transition-colors duration-300"><i class="fa-solid fa-check"></i></div> Business Cards & Brochures</li>
+                                <li class="flex items-center gap-3 text-sm font-medium text-slate-700"><div class="w-5 h-5 rounded-full bg-brand-100 text-brand-500 flex items-center justify-center text-[10px] group-hover:bg-brand-500 group-hover:text-white transition-colors duration-300"><i class="fa-solid fa-check"></i></div> Banners & Posters</li>
+                                <li class="flex items-center gap-3 text-sm font-medium text-slate-700"><div class="w-5 h-5 rounded-full bg-brand-100 text-brand-500 flex items-center justify-center text-[10px] group-hover:bg-brand-500 group-hover:text-white transition-colors duration-300"><i class="fa-solid fa-check"></i></div> Print-Ready Files</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Service 4: Responsive Web Design -->
+                    <div class="bg-white/80 backdrop-blur-xl p-6 lg:p-8 rounded-[2rem] hover:-translate-y-3 hover:scale-[1.02] transition-all duration-500 group border border-white/60 hover:border-brand-300/50 shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:shadow-[0_30px_60px_rgba(239,206,44,0.2)] relative overflow-hidden flex flex-col h-full">
+                        <div class="absolute inset-0 bg-gradient-to-br from-brand-50/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 z-0 pointer-events-none"></div>
+                        <div class="relative z-10 flex-grow flex flex-col">
+                            <div class="w-16 h-16 rounded-[1.25rem] bg-white shadow-sm border border-slate-100 flex items-center justify-center text-brand-500 text-3xl mb-6 group-hover:bg-gradient-to-br group-hover:from-brand-400 group-hover:to-brand-500 group-hover:text-white group-hover:border-transparent group-hover:shadow-brand-500/40 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
+                                <i class="fa-solid fa-desktop"></i>
+                            </div>
+                            <h3 class="text-xl font-display font-bold text-dark-900 mb-4 group-hover:text-brand-600 transition-colors duration-300">Responsive Web Design</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed mb-6 flex-grow">Mobile-first responsive websites optimized for desktops, tablets, and smartphones to maximize user engagement.</p>
+                            <ul class="space-y-3 w-full border-t border-slate-200/60 group-hover:border-brand-500/30 transition-colors duration-500 pt-6 mt-auto">
+                                <li class="flex items-center gap-3 text-sm font-medium text-slate-700"><div class="w-5 h-5 rounded-full bg-brand-100 text-brand-500 flex items-center justify-center text-[10px] group-hover:bg-brand-500 group-hover:text-white transition-colors duration-300"><i class="fa-solid fa-check"></i></div> Mobile-First Approach</li>
+                                <li class="flex items-center gap-3 text-sm font-medium text-slate-700"><div class="w-5 h-5 rounded-full bg-brand-100 text-brand-500 flex items-center justify-center text-[10px] group-hover:bg-brand-500 group-hover:text-white transition-colors duration-300"><i class="fa-solid fa-check"></i></div> Cross-Browser Testing</li>
+                                <li class="flex items-center gap-3 text-sm font-medium text-slate-700"><div class="w-5 h-5 rounded-full bg-brand-100 text-brand-500 flex items-center justify-center text-[10px] group-hover:bg-brand-500 group-hover:text-white transition-colors duration-300"><i class="fa-solid fa-check"></i></div> Performance Optimization</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Service 5: Web Development -->
+                    <div class="bg-white/80 backdrop-blur-xl p-6 lg:p-8 rounded-[2rem] hover:-translate-y-3 hover:scale-[1.02] transition-all duration-500 group border border-white/60 hover:border-brand-300/50 shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:shadow-[0_30px_60px_rgba(239,206,44,0.2)] relative overflow-hidden flex flex-col h-full">
+                        <div class="absolute inset-0 bg-gradient-to-br from-brand-50/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 z-0 pointer-events-none"></div>
+                        <div class="relative z-10 flex-grow flex flex-col">
+                            <div class="w-16 h-16 rounded-[1.25rem] bg-white shadow-sm border border-slate-100 flex items-center justify-center text-brand-500 text-3xl mb-6 group-hover:bg-gradient-to-br group-hover:from-brand-400 group-hover:to-brand-500 group-hover:text-white group-hover:border-transparent group-hover:shadow-brand-500/40 group-hover:scale-110 group-hover:-rotate-6 transition-all duration-500">
+                                <i class="fa-solid fa-code"></i>
+                            </div>
+                            <h3 class="text-xl font-display font-bold text-dark-900 mb-4 group-hover:text-brand-600 transition-colors duration-300">Web Development</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed mb-6 flex-grow">Custom website development with modern technologies, high performance, security, and scalability for businesses of all sizes.</p>
+                            <ul class="space-y-3 w-full border-t border-slate-200/60 group-hover:border-brand-500/30 transition-colors duration-500 pt-6 mt-auto">
+                                <li class="flex items-center gap-3 text-sm font-medium text-slate-700"><div class="w-5 h-5 rounded-full bg-brand-100 text-brand-500 flex items-center justify-center text-[10px] group-hover:bg-brand-500 group-hover:text-white transition-colors duration-300"><i class="fa-solid fa-check"></i></div> Frontend Development</li>
+                                <li class="flex items-center gap-3 text-sm font-medium text-slate-700"><div class="w-5 h-5 rounded-full bg-brand-100 text-brand-500 flex items-center justify-center text-[10px] group-hover:bg-brand-500 group-hover:text-white transition-colors duration-300"><i class="fa-solid fa-check"></i></div> Backend Architecture</li>
+                                <li class="flex items-center gap-3 text-sm font-medium text-slate-700"><div class="w-5 h-5 rounded-full bg-brand-100 text-brand-500 flex items-center justify-center text-[10px] group-hover:bg-brand-500 group-hover:text-white transition-colors duration-300"><i class="fa-solid fa-check"></i></div> API Integration</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Service 6: Ecommerce Development -->
+                    <div class="bg-white/80 backdrop-blur-xl p-6 lg:p-8 rounded-[2rem] hover:-translate-y-3 hover:scale-[1.02] transition-all duration-500 group border border-white/60 hover:border-brand-300/50 shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:shadow-[0_30px_60px_rgba(239,206,44,0.2)] relative overflow-hidden flex flex-col h-full">
+                        <div class="absolute inset-0 bg-gradient-to-br from-brand-50/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 z-0 pointer-events-none"></div>
+                        <div class="relative z-10 flex-grow flex flex-col">
+                            <div class="w-16 h-16 rounded-[1.25rem] bg-white shadow-sm border border-slate-100 flex items-center justify-center text-brand-500 text-3xl mb-6 group-hover:bg-gradient-to-br group-hover:from-brand-400 group-hover:to-brand-500 group-hover:text-white group-hover:border-transparent group-hover:shadow-brand-500/40 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                            </div>
+                            <h3 class="text-xl font-display font-bold text-dark-900 mb-4 group-hover:text-brand-600 transition-colors duration-300">Ecommerce Development</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed mb-6 flex-grow">Build powerful online stores with secure payments, product management, inventory systems, and seamless shopping experiences.</p>
+                            <ul class="space-y-3 w-full border-t border-slate-200/60 group-hover:border-brand-500/30 transition-colors duration-500 pt-6 mt-auto">
+                                <li class="flex items-center gap-3 text-sm font-medium text-slate-700"><div class="w-5 h-5 rounded-full bg-brand-100 text-brand-500 flex items-center justify-center text-[10px] group-hover:bg-brand-500 group-hover:text-white transition-colors duration-300"><i class="fa-solid fa-check"></i></div> Shopping Cart Integration</li>
+                                <li class="flex items-center gap-3 text-sm font-medium text-slate-700"><div class="w-5 h-5 rounded-full bg-brand-100 text-brand-500 flex items-center justify-center text-[10px] group-hover:bg-brand-500 group-hover:text-white transition-colors duration-300"><i class="fa-solid fa-check"></i></div> Secure Payment Gateways</li>
+                                <li class="flex items-center gap-3 text-sm font-medium text-slate-700"><div class="w-5 h-5 rounded-full bg-brand-100 text-brand-500 flex items-center justify-center text-[10px] group-hover:bg-brand-500 group-hover:text-white transition-colors duration-300"><i class="fa-solid fa-check"></i></div> Inventory Management</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Service 7: Web Hosting & Domains -->
+                    <div class="bg-white/80 backdrop-blur-xl p-6 lg:p-8 rounded-[2rem] hover:-translate-y-3 hover:scale-[1.02] transition-all duration-500 group border border-white/60 hover:border-brand-300/50 shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:shadow-[0_30px_60px_rgba(239,206,44,0.2)] relative overflow-hidden flex flex-col h-full">
+                        <div class="absolute inset-0 bg-gradient-to-br from-brand-50/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 z-0 pointer-events-none"></div>
+                        <div class="relative z-10 flex-grow flex flex-col">
+                            <div class="w-16 h-16 rounded-[1.25rem] bg-white shadow-sm border border-slate-100 flex items-center justify-center text-brand-500 text-3xl mb-6 group-hover:bg-gradient-to-br group-hover:from-brand-400 group-hover:to-brand-500 group-hover:text-white group-hover:border-transparent group-hover:shadow-brand-500/40 group-hover:scale-110 group-hover:-rotate-6 transition-all duration-500">
+                                <i class="fa-solid fa-server"></i>
+                            </div>
+                            <h3 class="text-xl font-display font-bold text-dark-900 mb-4 group-hover:text-brand-600 transition-colors duration-300">Web Hosting & Domains</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed mb-6 flex-grow">Reliable hosting solutions, domain registration, email setup, SSL certificates, backups, and website maintenance.</p>
+                            <ul class="space-y-3 w-full border-t border-slate-200/60 group-hover:border-brand-500/30 transition-colors duration-500 pt-6 mt-auto">
+                                <li class="flex items-center gap-3 text-sm font-medium text-slate-700"><div class="w-5 h-5 rounded-full bg-brand-100 text-brand-500 flex items-center justify-center text-[10px] group-hover:bg-brand-500 group-hover:text-white transition-colors duration-300"><i class="fa-solid fa-check"></i></div> 99.9% Uptime Guarantee</li>
+                                <li class="flex items-center gap-3 text-sm font-medium text-slate-700"><div class="w-5 h-5 rounded-full bg-brand-100 text-brand-500 flex items-center justify-center text-[10px] group-hover:bg-brand-500 group-hover:text-white transition-colors duration-300"><i class="fa-solid fa-check"></i></div> Daily Automated Backups</li>
+                                <li class="flex items-center gap-3 text-sm font-medium text-slate-700"><div class="w-5 h-5 rounded-full bg-brand-100 text-brand-500 flex items-center justify-center text-[10px] group-hover:bg-brand-500 group-hover:text-white transition-colors duration-300"><i class="fa-solid fa-check"></i></div> Free SSL Certificates</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Service 8: Software Solutions -->
+                    <div class="bg-white/80 backdrop-blur-xl p-6 lg:p-8 rounded-[2rem] hover:-translate-y-3 hover:scale-[1.02] transition-all duration-500 group border border-white/60 hover:border-brand-300/50 shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:shadow-[0_30px_60px_rgba(239,206,44,0.2)] relative overflow-hidden flex flex-col h-full">
+                        <div class="absolute inset-0 bg-gradient-to-br from-brand-50/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 z-0 pointer-events-none"></div>
+                        <div class="relative z-10 flex-grow flex flex-col">
+                            <div class="w-16 h-16 rounded-[1.25rem] bg-white shadow-sm border border-slate-100 flex items-center justify-center text-brand-500 text-3xl mb-6 group-hover:bg-gradient-to-br group-hover:from-brand-400 group-hover:to-brand-500 group-hover:text-white group-hover:border-transparent group-hover:shadow-brand-500/40 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
+                                <i class="fa-solid fa-database"></i>
+                            </div>
+                            <h3 class="text-xl font-display font-bold text-dark-900 mb-4 group-hover:text-brand-600 transition-colors duration-300">Software Solutions</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed mb-6 flex-grow">Custom software development including ERP systems, inventory management software, CRM solutions, and business automation tools.</p>
+                            <ul class="space-y-3 w-full border-t border-slate-200/60 group-hover:border-brand-500/30 transition-colors duration-500 pt-6 mt-auto">
+                                <li class="flex items-center gap-3 text-sm font-medium text-slate-700"><div class="w-5 h-5 rounded-full bg-brand-100 text-brand-500 flex items-center justify-center text-[10px] group-hover:bg-brand-500 group-hover:text-white transition-colors duration-300"><i class="fa-solid fa-check"></i></div> Custom ERP Systems</li>
+                                <li class="flex items-center gap-3 text-sm font-medium text-slate-700"><div class="w-5 h-5 rounded-full bg-brand-100 text-brand-500 flex items-center justify-center text-[10px] group-hover:bg-brand-500 group-hover:text-white transition-colors duration-300"><i class="fa-solid fa-check"></i></div> CRM Development</li>
+                                <li class="flex items-center gap-3 text-sm font-medium text-slate-700"><div class="w-5 h-5 rounded-full bg-brand-100 text-brand-500 flex items-center justify-center text-[10px] group-hover:bg-brand-500 group-hover:text-white transition-colors duration-300"><i class="fa-solid fa-check"></i></div> Cloud Infrastructure</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <!-- Footer -->
+        <site-footer></site-footer>
+    </div>
+</body>
+</html>

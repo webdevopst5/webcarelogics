@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webcarelogics | Contact Us</title>
+    <meta name="description" content="Professional software and web development company offering custom ERP software, dynamic website design, and SEO services.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS (CDN for Static Setup) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#fff8e6',
+                            100: '#ffefc1',
+                            200: '#ffe08a',
+                            300: '#ffd04d',
+                            400: '#ffc11a',
+                            500: '#ffad05',
+                            600: '#cc8e00',
+                            700: '#996b00',
+                            800: '#664700',
+                            900: '#332400',
+                            950: '#1a1200',
+                        },
+                        dark: {
+                            900: '#031a1f',
+                            800: '#052c34',
+                            700: '#08414d',
+                        }
+                    },
+                    maxWidth: {
+                        'container': '1400px',
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'blob': 'blob 7s infinite',
+                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        blob: {
+                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                            '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+                            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+                            '100%': { transform: 'translate(0px, 0px) scale(1)' },
+                        },
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS for micro-animations and utilities not easily done in Tailwind -->
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .glass {
+                @apply bg-white/10 backdrop-blur-md border border-white/20 shadow-[0_8px_32px_0_rgba(31,38,135,0.07)];
+            }
+            .glass-dark {
+                @apply bg-dark-900/60 backdrop-blur-xl border border-white/10;
+            }
+            .text-gradient {
+                @apply bg-clip-text text-transparent bg-gradient-to-r from-brand-400 to-red-500;
+            }
+            .container-1400 {
+                @apply max-w-container mx-auto px-4 sm:px-6 lg:px-8;
+            }
+        }
+    </style>
+
+    <!-- Alpine.js -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <!-- Custom Components -->
+    <script defer src="components.js"></script>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="img/favicon.png">
+</head>
+<body class="bg-dark-900 text-slate-300 antialiased selection:bg-brand-500 selection:text-white overflow-x-hidden relative">
+    
+    <!-- Background Gradient Blobs -->
+    <div class="fixed inset-0 overflow-hidden pointer-events-none z-0">
+        <div class="absolute top-0 -left-4 w-72 h-72 bg-brand-500 rounded-full mix-blend-multiply filter blur-[128px] opacity-20 animate-blob"></div>
+        <div class="absolute top-0 -right-4 w-72 h-72 bg-red-500 rounded-full mix-blend-multiply filter blur-[128px] opacity-20 animate-blob animation-delay-2000"></div>
+        <div class="absolute -bottom-8 left-20 w-72 h-72 bg-orange-500 rounded-full mix-blend-multiply filter blur-[128px] opacity-20 animate-blob animation-delay-4000"></div>
+    </div>
+
+    <div class="relative z-10 flex flex-col min-h-screen">
+        <!-- Header -->
+        <site-header></site-header>
+
+        <!-- Main Content -->
+        <main class="flex-grow pt-24 md:pt-32">
+            <!-- Page Header -->
+            <section class="py-12 md:py-20 relative">
+                <div class="container-1400 text-center relative z-10">
+                    <h1 class="font-display text-5xl md:text-6xl font-bold text-white mb-6">Get in <span class="text-brand-400">Touch</span></h1>
+                    <p class="text-xl text-slate-400 max-w-2xl mx-auto">Ready to start your next project? Contact us today to discuss your digital needs.</p>
+                </div>
+            </section>
+
+            <!-- Contact Form & Info Section -->
+            <section class="py-16 relative overflow-hidden bg-slate-50">
+                <div class="container-1400 relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-16">
+                    
+                    <!-- Contact Information -->
+                    <div class="space-y-10">
+                        <div>
+                            <h2 class="font-display text-3xl font-bold text-dark-900 mb-4">We'd Love To Hear From You</h2>
+                            <p class="text-slate-600 leading-relaxed">Whether you have a question about our services, pricing, need a demo, or anything else, our team is ready to answer all your questions.</p>
+                        </div>
+                        
+                        <div class="space-y-8">
+                            <div class="flex items-start gap-6 group">
+                                <div class="w-14 h-14 rounded-2xl bg-white shadow-sm border border-slate-200 flex items-center justify-center text-brand-500 text-xl group-hover:bg-brand-500 group-hover:text-white transition-all duration-300">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-dark-900 font-bold mb-1">Our Location</h4>
+                                    <p class="text-slate-600">Webcare Logics HQ,<br>Jhunjhunu, Rajasthan, India</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-6 group">
+                                <div class="w-14 h-14 rounded-2xl bg-white shadow-sm border border-slate-200 flex items-center justify-center text-brand-500 text-xl group-hover:bg-brand-500 group-hover:text-white transition-all duration-300">
+                                    <i class="fa-solid fa-phone"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-dark-900 font-bold mb-1">Call Us</h4>
+                                    <p class="text-slate-600"><a href="tel:+919784018712" class="hover:text-brand-500 transition-colors">+91 9784018712</a></p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-6 group">
+                                <div class="w-14 h-14 rounded-2xl bg-white shadow-sm border border-slate-200 flex items-center justify-center text-brand-500 text-xl group-hover:bg-brand-500 group-hover:text-white transition-all duration-300">
+                                    <i class="fa-solid fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-dark-900 font-bold mb-1">Email Us</h4>
+                                    <p class="text-slate-600"><a href="mailto:webdevpspvtltd@gmail.com" class="hover:text-brand-500 transition-colors">webdevpspvtltd@gmail.com</a></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Social Links -->
+                        <div class="pt-8 border-t border-slate-200">
+                            <h4 class="text-dark-900 font-bold mb-6">Follow Us</h4>
+                            <div class="flex items-center gap-4">
+                                <a href="https://www.facebook.com/people/Webdevops-Pvt-Ltd/61571742363819/" target="_blank" class="w-12 h-12 rounded-full bg-white shadow-sm border border-slate-200 flex items-center justify-center text-slate-600 hover:bg-brand-500 hover:text-white hover:border-brand-500 hover:-translate-y-1 transition-all duration-300">
+                                    <i class="fa-brands fa-facebook-f"></i>
+                                </a>
+                                <a href="https://www.linkedin.com/company/webdevops-pvt-ltd/" target="_blank" class="w-12 h-12 rounded-full bg-white shadow-sm border border-slate-200 flex items-center justify-center text-slate-600 hover:bg-brand-500 hover:text-white hover:border-brand-500 hover:-translate-y-1 transition-all duration-300">
+                                    <i class="fa-brands fa-linkedin-in"></i>
+                                </a>
+                                <a href="https://www.instagram.com/webdevops_pvt_ltd?igsh=MW5ud2o5Z3I5cGZydw==" target="_blank" class="w-12 h-12 rounded-full bg-white shadow-sm border border-slate-200 flex items-center justify-center text-slate-600 hover:bg-brand-500 hover:text-white hover:border-brand-500 hover:-translate-y-1 transition-all duration-300">
+                                    <i class="fa-brands fa-instagram"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <div class="bg-white border border-slate-200 shadow-xl shadow-slate-200/50 p-10 rounded-3xl" x-data="{ status: 'idle' }">
+                        
+                        <!-- Success Message -->
+                        <div x-show="status === 'success'" x-transition class="text-center py-12" style="display: none;">
+                            <div class="w-20 h-20 bg-green-50 rounded-full flex items-center justify-center mx-auto mb-6 text-green-500 text-3xl border border-green-100">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                            <h3 class="font-display text-3xl font-bold text-dark-900 mb-4">Thank You!</h3>
+                            <p class="text-slate-600 text-lg">Your message has been sent successfully. We will get back to you shortly.</p>
+                            <button @click="status = 'idle'" type="button" class="mt-8 text-brand-500 font-semibold hover:text-brand-600 transition-colors">
+                                Send another message
+                            </button>
+                        </div>
+
+                        <!-- Error Message -->
+                        <div x-show="status === 'error'" x-transition class="bg-red-50 text-red-600 p-4 rounded-xl mb-6 text-sm flex items-start gap-3" style="display: none;">
+                            <i class="fa-solid fa-circle-exclamation mt-0.5"></i>
+                            <p>Oops! Something went wrong while sending your message. Please try again or email us directly.</p>
+                        </div>
+
+                        <form x-show="status !== 'success'" 
+                              @submit.prevent="
+                                  status = 'submitting';
+                                  fetch('https://formsubmit.co/ajax/webdevpspvtltd@gmail.com', {
+                                      method: 'POST',
+                                      body: new FormData($event.target)
+                                  })
+                                  .then(response => response.json())
+                                  .then(data => {
+                                      if(data.success) {
+                                          status = 'success';
+                                          $event.target.reset();
+                                      } else {
+                                          status = 'error';
+                                      }
+                                  })
+                                  .catch(error => {
+                                      status = 'error';
+                                  });
+                              "
+                              class="space-y-6">
+                            <!-- Formsubmit Configuration -->
+                            <input type="hidden" name="_subject" value="New Contact Form Submission!">
+                            <input type="hidden" name="_captcha" value="false">
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div class="space-y-2">
+                                    <label class="text-sm font-bold text-dark-900">First Name</label>
+                                    <input type="text" name="First Name" required class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-dark-900 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 transition-all placeholder:text-slate-400" placeholder="John">
+                                </div>
+                                <div class="space-y-2">
+                                    <label class="text-sm font-bold text-dark-900">Last Name</label>
+                                    <input type="text" name="Last Name" required class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-dark-900 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 transition-all placeholder:text-slate-400" placeholder="Doe">
+                                </div>
+                            </div>
+                            <div class="space-y-2">
+                                <label class="text-sm font-bold text-dark-900">Email Address</label>
+                                <input type="email" name="Email" required class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-dark-900 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 transition-all placeholder:text-slate-400" placeholder="john@example.com">
+                            </div>
+                            <div class="space-y-2">
+                                <label class="text-sm font-bold text-dark-900">Subject</label>
+                                <input type="text" name="Subject" required class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-dark-900 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 transition-all placeholder:text-slate-400" placeholder="How can we help?">
+                            </div>
+                            <div class="space-y-2">
+                                <label class="text-sm font-bold text-dark-900">Message</label>
+                                <textarea name="Message" required rows="5" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-dark-900 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 transition-all placeholder:text-slate-400 resize-none" placeholder="Tell us about your project..."></textarea>
+                            </div>
+                            <button type="submit" :disabled="status === 'submitting'" class="w-full py-4 rounded-xl bg-gradient-to-r from-brand-500 to-brand-500 hover:from-brand-400 hover:to-brand-400 text-dark-900 font-bold text-lg shadow-brand-500/40 transition-all duration-300 disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center gap-2">
+                                <span x-show="status !== 'submitting'">Send Message</span>
+                                <span x-show="status === 'submitting'" style="display: none;"><i class="fa-solid fa-spinner fa-spin"></i> Sending...</span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <!-- Footer -->
+        <site-footer></site-footer>
+    </div>
+</body>
+</html>

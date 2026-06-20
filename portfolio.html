@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webcarelogics | Portfolio</title>
+    <meta name="description" content="Professional software and web development company offering custom ERP software, dynamic website design, and SEO services.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS (CDN for Static Setup) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                                                                        brand: {
+                            50: '#fff8e6',
+                            100: '#ffefc1',
+                            200: '#ffe08a',
+                            300: '#ffd04d',
+                            400: '#ffc11a',
+                            500: '#ffad05',
+                            600: '#cc8e00',
+                            700: '#996b00',
+                            800: '#664700',
+                            900: '#332400',
+                            950: '#1a1200',
+                        },
+                                                dark: {
+                            900: '#031a1f',
+                            800: '#052c34',
+                            700: '#08414d',
+                        }
+                    },
+                    maxWidth: {
+                        'container': '1400px',
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'blob': 'blob 7s infinite',
+                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        blob: {
+                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                            '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+                            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+                            '100%': { transform: 'translate(0px, 0px) scale(1)' },
+                        },
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS for micro-animations and utilities not easily done in Tailwind -->
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .glass {
+                @apply bg-white/10 backdrop-blur-md border border-white/20 shadow-[0_8px_32px_0_rgba(31,38,135,0.07)];
+            }
+            .glass-dark {
+                @apply bg-dark-900/60 backdrop-blur-xl border border-white/10;
+            }
+            .text-gradient {
+                @apply bg-clip-text text-transparent bg-gradient-to-r from-brand-400 to-red-500;
+            }
+            .container-1400 {
+                @apply max-w-container mx-auto px-4 sm:px-6 lg:px-8;
+            }
+        }
+    </style>
+
+    <!-- Alpine.js -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <!-- Custom Components -->
+    <script defer src="components.js"></script>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="img/favicon.png">
+</head>
+<body class="bg-dark-900 text-slate-300 antialiased selection:bg-brand-500 selection:text-white overflow-x-hidden relative">
+    
+    <!-- Background Gradient Blobs -->
+    <div class="fixed inset-0 overflow-hidden pointer-events-none z-0">
+        <div class="absolute top-0 -left-4 w-72 h-72 bg-brand-500 rounded-full mix-blend-multiply filter blur-[128px] opacity-20 animate-blob"></div>
+        <div class="absolute top-0 -right-4 w-72 h-72 bg-red-500 rounded-full mix-blend-multiply filter blur-[128px] opacity-20 animate-blob animation-delay-2000"></div>
+        <div class="absolute -bottom-8 left-20 w-72 h-72 bg-orange-500 rounded-full mix-blend-multiply filter blur-[128px] opacity-20 animate-blob animation-delay-4000"></div>
+    </div>
+
+    <div class="relative z-10 flex flex-col min-h-screen">
+        <!-- Header -->
+        <site-header></site-header>
+
+        <!-- Main Content -->
+        <main class="flex-grow pt-24 md:pt-32">
+            <!-- Page Header -->
+            <section class="py-12 md:py-20 relative">
+                <div class="container-1400 text-center relative z-10">
+                    <h1 class="font-display text-5xl md:text-6xl font-bold text-white mb-6">Our <span class="text-brand-400">Portfolio</span></h1>
+                    <p class="text-xl text-slate-400 max-w-2xl mx-auto">Explore our diverse range of successful projects and see how we've helped businesses achieve digital excellence.</p>
+                </div>
+            </section>
+
+            <!-- Portfolio Grid Section -->
+            <section class="py-16 relative overflow-hidden bg-slate-50">
+                <div class="container-1400 relative z-10">
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                        <!-- Project 1 -->
+                        <div class="group relative rounded-2xl overflow-hidden cursor-pointer h-96">
+                            <img src="img/item01.webp" alt="E-Commerce Platform" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-dark-900 via-dark-900/60 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300"></div>
+                            <div class="absolute inset-0 p-6 md:p-8 flex flex-col justify-end translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                                <span class="text-brand-400 text-sm font-medium mb-2">Healthcare Solutions</span>
+                                <h4 class="text-2xl font-bold text-white mb-2">Medvesta Hypnosis</h4>
+                                <p class="text-slate-300 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">Professional hypnosis and wellness solutions designed to support mental well-being, stress management, and personal growth through personalized care.</p>
+                            </div>
+                        </div>
+
+                        <!-- Project 2 -->
+                        <div class="group relative rounded-2xl overflow-hidden cursor-pointer h-96">
+                            <img src="img/item02.webp" alt="Fitness Rich" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-dark-900 via-dark-900/60 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300"></div>
+                            <div class="absolute inset-0 p-6 md:p-8 flex flex-col justify-end translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                                <span class="text-red-400 text-sm font-medium mb-2">Fitness & Wellness</span>
+                                <h4 class="text-2xl font-bold text-white mb-2">Fitness Rich</h4>
+                                <p class="text-slate-300 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">A comprehensive fitness platform promoting healthy lifestyles through expert guidance, workout programs, nutrition plans, and community engagement.</p>
+                            </div>
+                        </div>
+
+                        <!-- Project 3 -->
+                        <div class="group relative rounded-2xl overflow-hidden cursor-pointer h-96">
+                            <img src="img/item03.webp" alt="Plan Printing UK" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-dark-900 via-dark-900/60 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300"></div>
+                            <div class="absolute inset-0 p-6 md:p-8 flex flex-col justify-end translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                                <span class="text-orange-400 text-sm font-medium mb-2">Printing Services</span>
+                                <h4 class="text-2xl font-bold text-white mb-2">Plan Printing UK</h4>
+                                <p class="text-slate-300 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">An online printing solution offering fast, accurate, and high-quality plan printing services for architects, engineers, and construction professionals.</p>
+                            </div>
+                        </div>
+
+                        <!-- Project 4 -->
+                        <div class="group relative rounded-2xl overflow-hidden cursor-pointer h-96">
+                            <img src="img/item04.webp" alt="Kenna Age Defying" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-dark-900 via-dark-900/60 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300"></div>
+                            <div class="absolute inset-0 p-6 md:p-8 flex flex-col justify-end translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                                <span class="text-amber-400 text-sm font-medium mb-2">Beauty & Skincare</span>
+                                <h4 class="text-2xl font-bold text-white mb-2">Kenna Age Defying</h4>
+                                <p class="text-slate-300 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">A conversion-focused beauty product website highlighting anti-aging skincare solutions with compelling visuals and lead-generation features.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Project 5 -->
+                        <div class="group relative rounded-2xl overflow-hidden cursor-pointer h-96">
+                            <img src="img/item05.webp" alt="Narendra Academy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-dark-900 via-dark-900/60 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300"></div>
+                            <div class="absolute inset-0 p-6 md:p-8 flex flex-col justify-end translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                                <span class="text-brand-400 text-sm font-medium mb-2">School Website</span>
+                                <h4 class="text-2xl font-bold text-white mb-2">Narendra Academy</h4>
+                                <p class="text-slate-300 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">A modern, user-friendly website for Narendra Academy, providing essential information about courses, admissions, faculty, and campus life.</p>
+                            </div>
+                        </div>
+
+                        <!-- Project 6 -->
+                        <div class="group relative rounded-2xl overflow-hidden cursor-pointer h-96">
+                            <img src="img/item06.webp" alt="RK Computers" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-dark-900 via-dark-900/60 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300"></div>
+                            <div class="absolute inset-0 p-6 md:p-8 flex flex-col justify-end translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                                <span class="text-amber-400 text-sm font-medium mb-2">Technology</span>
+                                <h4 class="text-2xl font-bold text-white mb-2">RK Computers</h4>
+                                <p class="text-slate-300 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">A professional website for RK Computers, showcasing their computer sales, repair services, and technology solutions with a modern, reliable design.</p>
+                            </div>
+                        </div>
+
+                        <!-- Project 7 -->
+                        <div class="group relative rounded-2xl overflow-hidden cursor-pointer h-96">
+                            <img src="img/item07.webp" alt="Lalchand Peda Wala" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-dark-900 via-dark-900/60 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300"></div>
+                            <div class="absolute inset-0 p-6 md:p-8 flex flex-col justify-end translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                                <span class="text-amber-400 text-sm font-medium mb-2">Food Industry</span>
+                                <h4 class="text-2xl font-bold text-white mb-2">Lalchand Peda Wala</h4>
+                                <p class="text-slate-300 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">A professional website for Lalchand Peda Wala, showcasing their traditional Indian sweets and snacks with a modern, reliable design.</p>
+                            </div>
+                        </div>
+
+                        <!-- Project 8 -->
+                        <div class="group relative rounded-2xl overflow-hidden cursor-pointer h-96">
+                            <img src="img/item08.webp" alt="Sanjay Misthan Bhandar" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-dark-900 via-dark-900/60 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300"></div>
+                            <div class="absolute inset-0 p-6 md:p-8 flex flex-col justify-end translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                                <span class="text-amber-400 text-sm font-medium mb-2">Restaurant & Sweets</span>
+                                <h4 class="text-2xl font-bold text-white mb-2">Sanjay Misthan Bhandar</h4>
+                                <p class="text-slate-300 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">A professional website for Sanjay Misthan Bhandar, showcasing their traditional Indian sweets and snacks with a modern, reliable design.</p>
+                            </div>
+                        </div>
+
+                        <!-- Project 9 -->
+                        <div class="group relative rounded-2xl overflow-hidden cursor-pointer h-96">
+                            <img src="img/item09.webp" alt="Saraswati School" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-dark-900 via-dark-900/60 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300"></div>
+                            <div class="absolute inset-0 p-6 md:p-8 flex flex-col justify-end translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                                <span class="text-amber-400 text-sm font-medium mb-2">Education</span>
+                                <h4 class="text-2xl font-bold text-white mb-2">Saraswati School</h4>
+                                <p class="text-slate-300 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">A professional website for Saraswati School, showcasing their courses, admissions, faculty, and campus life with a modern, reliable design.</p>
+                            </div>
+                        </div>
+
+                        <!-- Project 10 -->
+                        <div class="group relative rounded-2xl overflow-hidden cursor-pointer h-96">
+                            <img src="img/item10.webp" alt="Vijay Tours & Travels" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-dark-900 via-dark-900/60 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300"></div>
+                            <div class="absolute inset-0 p-6 md:p-8 flex flex-col justify-end translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                                <span class="text-amber-400 text-sm font-medium mb-2">Travel Agency</span>
+                                <h4 class="text-2xl font-bold text-white mb-2">Vijay Tours & Travels</h4>
+                                <p class="text-slate-300 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">A professional website for Vijay Tours & Travels, showcasing their tour packages, travel services, and travel solutions with a modern, reliable design.</p>
+                            </div>
+                        </div>
+
+                        <!-- Project 11 -->
+                        <div class="group relative rounded-2xl overflow-hidden cursor-pointer h-96">
+                            <img src="img/item11.webp" alt="RP Public School" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-dark-900 via-dark-900/60 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300"></div>
+                            <div class="absolute inset-0 p-6 md:p-8 flex flex-col justify-end translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                                <span class="text-amber-400 text-sm font-medium mb-2">School Website</span>
+                                <h4 class="text-2xl font-bold text-white mb-2">RP Public School</h4>
+                                <p class="text-slate-300 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">A professional website for RP Public School, showcasing their courses, admissions, faculty, and campus life with a modern, reliable design.</p>
+                            </div>
+                        </div>
+                        
+
+                    </div>
+                </div>
+            </section>
+        </main>
+        <!-- Footer -->
+        <site-footer></site-footer>
+    </div>
+</body>
+</html>
